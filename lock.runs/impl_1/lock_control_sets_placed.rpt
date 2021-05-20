@@ -1,0 +1,89 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Mon Dec 14 17:57:08 2020
+| Host         : DESKTOP-3ODG2VN running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file lock_control_sets_placed.rpt
+| Design       : lock
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    11 |
+|    Minimum number of control sets                        |    11 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    32 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    11 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              10 |            8 |
+| No           | No                    | Yes                    |             448 |          176 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              22 |           10 |
+| Yes          | No                    | Yes                    |             288 |           82 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------+-----------------------+------------------+------------------+----------------+--------------+
+|    Clock Signal    |     Enable Signal     | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------+-----------------------+------------------+------------------+----------------+--------------+
+|  sys_clk_IBUF_BUFG | U1/rst_n[0]           | U1/rst_n_1       |                1 |              4 |         4.00 |
+|  sys_clk_IBUF_BUFG | is_jmp[6]_i_1_n_0     | U1/rst_n_1       |                1 |              4 |         4.00 |
+|  sys_clk_IBUF_BUFG | is_jmp[7]_i_1_n_0     | U1/rst_n_1       |                2 |              4 |         2.00 |
+|  sys_clk_IBUF_BUFG | is_jmp[4]_i_1_n_0     | U1/rst_n_1       |                1 |              4 |         4.00 |
+|  sys_clk_IBUF_BUFG | number_3              | U1/rst_n_1       |                1 |              4 |         4.00 |
+|  sys_clk_IBUF_BUFG | U1/lock_status_reg[0] |                  |                3 |              6 |         2.00 |
+|  sys_clk_IBUF_BUFG |                       |                  |                8 |             10 |         1.25 |
+|  sys_clk_IBUF_BUFG | U1/rst_n_0[0]         | U1/rst_n_1       |                7 |             12 |         1.71 |
+|  sys_clk_IBUF_BUFG | pwd1                  |                  |                7 |             16 |         2.29 |
+|  sys_clk_IBUF_BUFG | rst_n_IBUF            | U1/rst_n_1       |               69 |            256 |         3.71 |
+|  sys_clk_IBUF_BUFG |                       | U1/rst_n_1       |              176 |            448 |         2.55 |
++--------------------+-----------------------+------------------+------------------+----------------+--------------+
+
+
